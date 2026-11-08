@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - Aula 9</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <p>Portal de Estudos</p>
+        <nav>
+            <a href="index.html" class="botao-roxo">Acesso</a>
+            <a href="questionario.html" class="botao-branco">Questionário</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Boas-Vindas</h1>
+        <h2>Seu próximo passo começa aqui</h2>
+        <p>Entre ou crie seu perfil para organizar seus estudos.</p>
+
+        <div class="formularios">
+            <!-- Form de Login -->
+            <form class="cartoes">
+                <h3>Entrar</h3>
+
+                <p>
+                    <label for="email-login">E-mail (obrigatório)</label>
+                    <input type="email" placeholder="ana@example.com" id="email-login" required autocomplete="email">
+                </p>
+
+                <p>
+                    <label for="senha-login">Senha (obrigatória)</label>
+                    <input type="password" id="senha-login" required>
+                </p>
+
+                <p>
+                    <input type="checkbox" value="lembrar-email" name="lembrar-check" id="login-check">
+                    <label for="login-check">Lembrar meu e-mail</label>
+                </p>
+
+                <p>
+                    <button type="submit" class="botao-roxo">Entrar</button>
+                    <button type="reset" class="botao-branco">Limpar</button>
+                </p>
+            </form>
+
+            <!-- Form de Cadastro -->
+            <form class="cartoes">
+                <h3>Criar Cadastro</h3>
+
+                <p>
+                    <label for="cad-nome">Nome completo (obrigatório)</label>
+                    <input type="text" placeholder="Ex.: Ana Souza" id="cad-nome" required minlength="2" maxlength="60" autocomplete="name">
+                </p>
+
+                <p>
+                    <label for="cad-email">E-mail (obrigatório)</label>
+                    <input type="email" placeholder="ana@example.com" id="cad-email" required autocomplete="email">
+                </p>
+
+                <p>
+                    <label for="cad-senha">Crie uma senha (obrigatória)</label>
+                    <input type="password" id="cad-senha" required minlength="6">
+                    <small>Use pelo menos 6 caracteres nesta simulação</small>
+                </p>
+
+                <p>
+                    <label for="cad-sel">Curso (obrigatório)</label>
+                    <select id="cad-sel" name="cad-sel" required>
+                        <option value="">Selecione seu curso</option>
+                        <option value="Analise e Desenvolvimento de Sistemas">Análise e Desenvolvimento de Sistemas</option>
+                        <option value="Ciência da Computação">Ciência da Computação</option>
+                        <option value="Sistemas de Informação">Sistemas de Informação</option>
+                    </select>
+                </p>
+
+                <p>
+                    <input type="checkbox" value="cad-termo" name="cad-termo" id="cad-termo" required>
+                    <label for="cad-termo">Concordo com os termos desta atividade (obrigatório)</label>
+                </p>
+
+                <p>
+                    <button type="submit" class="botao-roxo">Cadastrar</button>
+                    <button type="reset" class="botao-branco">Limpar</button>
+                </p>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>

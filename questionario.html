@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interesse em passeio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <p>Portal de Estudos</p>
+        <nav>
+            <a href="index.html" class="botao-branco">Acesso</a>
+            <a href="questionario.html" class="botao-roxo">Questionário</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Interesse em passeio</h1>
+        <p>Campos indicados como obrigatórios precisam ser preenchidos.</p>
+
+        <form>
+            <div class="grade-formulario">
+                <!-- Coluna da Esquerda -->
+                <div class="coluna">
+                    <p>
+                        <label for="nome">Nome (obrigatório)</label>
+                        <input type="text" id="nome" name="nome" placeholder="Ex.: Ana Souza" required minlength="2" maxlength="60" autocomplete="name" aria-describedby="ajuda-nome">
+                        <small id="ajuda-nome">Use de 2 a 60 caracteres.</small>
+                    </p>
+
+                    <p>
+                        <label for="email">E-mail (obrigatório)</label>
+                        <input type="email" id="email" name="email" placeholder="ana@example.com" autocomplete="email" required>
+                    </p>
+
+                    <p>
+                        <label for="telefone">Telefone (opcional)</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" autocomplete="tel">
+                    </p>
+
+                    <p>
+                        <label for="pessoas">Pessoas (1 a 6)</label>
+                        <input type="number" id="pessoas" name="pessoas" min="1" max="6" step="1" value="1" required>
+                    </p>
+
+                    <p>
+                        <label for="data">Data desejada (opcional)</label>
+                        <input type="date" id="data" name="data">
+                    </p>
+                </div>
+
+                <!-- Coluna da Direita -->
+                <div class="coluna">
+                    <fieldset>
+                        <legend>Turno preferido (obrigatório)</legend>
+                        <p>
+                            <input type="radio" id="manha" name="turno" value="manha" required>
+                            <label for="manha">Manhã</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="tarde" name="turno" value="tarde" required>
+                            <label for="tarde">Tarde</label>
+                        </p>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Interesses (opcional)</legend>
+                        <p>
+                            <input type="checkbox" id="parques" name="interesses" value="parques">
+                            <label for="parques">Parques</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="museus" name="interesses" value="museus">
+                            <label for="museus">Museus</label>
+                        </p>
+                    </fieldset>
+
+                    <p>
+                        <label for="passeio">Passeio (obrigatório)</label>
+                        <select id="passeio" name="passeio" required>
+                            <option value="">Selecione um passeio</option>
+                            <option value="parque">Parque da cidade</option>
+                            <option value="museu">Museu de história</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="mensagem">Mensagem (opcional)</label>
+                        <textarea id="mensagem" name="mensagem" placeholder="O que gostaria de saber?"></textarea>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tabela Oculta que abre ao clicar -->
+            <div id="tabela" hidden>
+                <table>
+                    <caption>Passeios disponíveis</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Passeio</th>
+                            <th scope="col">Turno</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Parque da cidade</td>
+                            <td>Manhã</td>
+                        </tr>
+                        <tr>
+                            <td>Museu de história</td>
+                            <td>Tarde</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Botões Inferiores -->
+            <div class="botoes-container">
+                <button type="button" id="mostrar" aria-controls="tabela" aria-expanded="false" class="botao-branco">Mostrar orientação</button>
+                <button type="submit" class="botao-roxo">Testar preenchimento</button>
+                <button type="reset" class="botao-branco">Restaurar campos</button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Script para abrir/fechar a tabela -->
+    <script>
+        const botao = document.getElementById('mostrar');
+        const tabela = document.getElementById('tabela');
+
+        botao.addEventListener('click', function () {
+            const estaOculto = tabela.hidden;
+            tabela.hidden = !estaOculto;
+
+            botao.setAttribute('aria-expanded', estaOculto ? 'true' : 'false');
+            botao.textContent = estaOculto ? 'Ocultar orientação' : 'Mostrar orientação';
+        });
+    </script>
+</body>
+</html>
